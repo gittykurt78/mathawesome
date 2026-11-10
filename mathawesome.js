@@ -1,38 +1,34 @@
 /*!
- * MathAwesome v1.0.0
+ * MathAwesome v1.1.0
  * A simple math library by gittykurt78
  */
 
 const MathAwesome = (function() {
   
-  // Private function (users of the library can't see or break this)
+  // Private function
   function checkNum(n) {
     if (typeof n !== 'number' || isNaN(n)) {
       throw new Error("MathAwesome: Please provide valid numbers.");
     }
   }
 
-  // Return the public API (the functions people can actually use)
+  // Return the public API
   return {
-    // Addition
     add: function(a, b) {
       checkNum(a); checkNum(b);
       return a + b;
     },
 
-    // Subtraction
     subtract: function(a, b) {
       checkNum(a); checkNum(b);
       return a - b;
     },
 
-    // Multiplication
     multiply: function(a, b) {
       checkNum(a); checkNum(b);
       return a * b;
     },
 
-    // Division
     divide: function(a, b) {
       checkNum(a); checkNum(b);
       if (b === 0) {
@@ -41,12 +37,26 @@ const MathAwesome = (function() {
       return a / b;
     },
 
-    // Bonus: Add a whole list of numbers together
     addAll: function(...numbers) {
       return numbers.reduce((sum, num) => {
         checkNum(num);
         return sum + num;
       }, 0);
+    },
+
+    // --- NEW FUNCTIONS BELOW ---
+
+    power: function(base, exponent) {
+      checkNum(base); checkNum(exponent);
+      return Math.pow(base, exponent);
+    },
+
+    sqrt: function(num) {
+      checkNum(num);
+      if (num < 0) {
+        throw new Error("MathAwesome: Imaginary!");
+      }
+      return Math.sqrt(num);
     }
   };
 
