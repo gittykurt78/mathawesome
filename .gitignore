@@ -57,13 +57,13 @@ Desktop.ini
 coverage/
 .nyc_output/
 
-## User settings
+# User settings
 xcuserdata/
 
-## Obj-C/Swift specific
+# Obj-C/Swift specific
 *.hmap
 
-## App packaging
+# App packaging
 *.ipa
 *.dSYM.zip
 *.dSYM
